@@ -15,6 +15,18 @@ const swiper = new Swiper('.swiper', {
   
   });
 
+const menuClick = (menu,nav) =>{
+  let menuBar = document.getElementById(menu),
+      navbar = document.querySelector(nav)
+  menuBar.addEventListener('click', () => {
+    navbar.classList.toggle('active')
+  })
+
+  window.onscroll = () =>{
+    navbar.classList.remove('active')
+  }
+}
+
 const changeBg = () =>{
   let navbar = document.getElementById('navbar')
   let scrollValue = window.scrollY;
@@ -34,6 +46,7 @@ const toggleSearch = (search,button) => {
   })
 }
 
+menuClick('menu-icon','.navbar-2')
 toggleSearch('search-bar','search-button')
 window.addEventListener('scroll',changeBg)
 

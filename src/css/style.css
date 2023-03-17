@@ -33,6 +33,9 @@ body{
     color: var(--sec-bg);
 }
 
+#menu-icon{
+    display: none;
+}
 .btn{
     background: var(--sec-bg);
     color: var(--main-bg);
@@ -342,4 +345,29 @@ section{
 }
 .space{
     width: 17px;
+}
+
+@media screen and (max-width: 1200px){
+    #menu-icon{
+        display: block;
+        display: flex;
+        cursor: pointer;
+    }
+    .navbar-2{
+        background-color: var(--search-color);
+        padding: 1.5rem 2.2rem;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: calc(25% - 5rem);
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+    .navbar-2 ul{
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+    }
+    .active{
+        opacity: 1;
+    }
 }
